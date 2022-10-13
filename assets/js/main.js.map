@@ -1,0 +1,1 @@
+{"version":3,"file":"js/main.js","mappings":";;;;;AAAAA,MAAM,CAACC,QAAQ,CAAC,CAACC,KAAK,CAAC,UAAUC,CAAC,EAAE,CAAC,CAAC,CAAC,C","sources":["webpack://ix-backlash/./src/js/main.js"],"sourcesContent":["jQuery(document).ready(function ($) {})"],"names":["jQuery","document","ready","$"],"sourceRoot":""}

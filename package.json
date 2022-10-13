@@ -1,0 +1,49 @@
+{
+  "name": "ix-backlash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+    "start:open": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build:custom": "wp-scripts build woocommerce.js main.js",
+    "start": "wp-scripts start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^24.0.0",
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "copy-webpack-plugin": "^10.2.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^5.0.16",
+    "glob": "^7.2.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.2.3",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo-loader": "^3.0.0",
+    "terser-webpack-plugin": "^5.3.0",
+    "thread-loader": "^3.0.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "inputmask": "^5.0.7",
+    "normalize.css": "^8.0.1"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"css/style.css","mappings":";;;AAAA;EACE;AACF,C","sources":["webpack://ix-backlash/./src/scss/style.scss"],"sourcesContent":["* {\r\n  outline: none;\r\n}"],"names":[],"sourceRoot":""}

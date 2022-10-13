@@ -1,0 +1,15 @@
+{
+    "name": "ix/backlash",
+    "authors": [
+        {
+            "name": "Dmitry V",
+            "email": "dev@wp-laba.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "classes"
+        ]
+    }
+}
