@@ -24,7 +24,7 @@ module.exports = {
 		main:                 path.resolve( process.cwd(), 'src/js', 'main.js' ),
 		// account:              path.resolve( process.cwd(), 'src/js', 'account.js' ),
 		style:                 path.resolve( process.cwd(), 'src/scss', 'style.scss' ),
-		//sprite:               glob.sync( path.resolve( __dirname, 'src/icons/*.svg' ) ),
+		// sprite:               glob.sync( path.resolve( __dirname, 'src/icons/*.svg' ) ),
 	},
 	output:       {
 		filename: filename( 'js' ),
@@ -77,7 +77,7 @@ module.exports = {
 				test:      /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
 				include:   path.resolve( __dirname, 'src/images' ),
 				exclude: path.resolve( __dirname, 'src/icons' ),
-				type:      'asset/resource',
+				type:      'assets/resource',
 				generator: {
 					filename: "images/[name][ext]",
 				},
@@ -85,7 +85,7 @@ module.exports = {
 			{
 				test:      /\.(woff|woff2|eot|ttf|otf|svg)$/i,
 				include:   path.resolve( __dirname, 'src/fonts' ),
-				type:      'asset/resource',
+				type:      'assets/resource',
 				generator: {
 					filename: "fonts/[name][ext]",
 				},

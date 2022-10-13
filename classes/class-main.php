@@ -28,11 +28,12 @@ class Main {
 
 		$this->templater = new Templater();
 		( new Enqueue() )->init_hooks();
+		( new Front() )->init_hooks();
 //		( new Shortcodes() )->init_hooks();
 //		( new Rest() )->init_hooks();
 
 //		( new Endpoints() )->init_hooks();
-//		( new Front() )->init_hooks();
+
 
 	}
 
