@@ -13,14 +13,15 @@
     box-sizing: border-box;
     color: #FFFFFF;
   }
-  .ixbl-backlash__btn-like {
+  .ixbl-backlash__btn-like span{
     width: 25px;
-    /*background: url('assets/resource/btn-dislike.svg') no-repeat;*/
+    //background: url('../../assets/images/btn-like.svg') no-repeat;
+    background: url('../images/logo1870х970.png') no-repeat;
     background-size: contain;
   }
-  .ixbl-backlash__btn-dislike {
+  .ixbl-backlash__btn-dislike span{
     width: 24px;
-    /*background: url('assets/resource/btn-dislike.svg') no-repeat;*/
+    //background: url('../images/btn-dislike.svg') no-repeat;
     background-size: contain;
   }
 }
