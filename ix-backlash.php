@@ -36,25 +36,30 @@ require IXBL_PLUGIN_DIR . '/vendor/autoload.php';
 /**
  * Отладка
  */
-function qminfo($str) {
-	do_action( 'qm/info',$str);
-}
-function pre($str){
-	echo '<pre>';
-	print_r($str);
-	echo '</pre>';
-}
+//if ( ! function_exists( 'qminfo' ) ) {
+//	function qminfo($str) {
+//		do_action( 'qm/info',$str);
+//	}
+//}
+//if ( ! function_exists( 'pre' ) ) {
+//	function pre($str){
+//		echo '<pre>';
+//		print_r($str);
+//		echo '</pre>';
+//	}
+//}
 
-if ( ! function_exists( 'ixpc' ) ) {
+
+if ( ! function_exists( 'ixbl' ) ) {
 	/**
 	 *
-	 * @return object IXPC class object.
+	 * @return object IXBL class object.
 	 * @since 1.0.0
 	 */
-	function ixpc(): object {
+	function ixbl(): object {
 
-		return IXPC\Main::instance();;
+		return IXBL\Main::instance();
 	}
 }
 
-ixpc();
+ixbl();

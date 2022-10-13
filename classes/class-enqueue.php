@@ -31,13 +31,13 @@ class Enqueue {
 		wp_enqueue_style( 'ixbl-styles' );
 
 		wp_localize_script(
-		'ixpc-scripts',
-		'ajax_data',
-			array(
-			'root'  => esc_url_raw( rest_url() ),
-			'ajaxurl'   => admin_url( 'admin-ajax.php' ),
-			'nonce' => wp_create_nonce( 'wp_rest'),
-			),
+			'ixbl-scripts',
+			'ajax_data',
+			[
+				'root'    => esc_url_raw( rest_url() ),
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				'nonce'   => wp_create_nonce( 'wp_rest' ),
+			],
 		);
 
 

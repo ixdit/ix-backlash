@@ -27,7 +27,7 @@ class Templater {
 	 */
 	public function template_path(): string {
 
-		return apply_filters( 'ix_template_path', 'ix-backlash/' );
+		return apply_filters( 'ixbl_template_path', 'ix-backlash/' );
 	}
 
 
@@ -44,6 +44,6 @@ class Templater {
 			$template_path = sprintf( '%s/templates/%s', $this->plugin_path(), $template_name );
 		}
 
-		return apply_filters( 'ixpc_locate_template', $template_path );
+		return apply_filters( 'ixbl_locate_template', $template_path );
 	}
 }
