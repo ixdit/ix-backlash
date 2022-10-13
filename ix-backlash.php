@@ -32,3 +32,29 @@ define( 'IXBL_PLUGIN_VER', '1.0.0' );
 define( 'IXBL_PLUGIN_NAME', 'Ix Backlash' );
 
 require IXBL_PLUGIN_DIR . '/vendor/autoload.php';
+
+/**
+ * Отладка
+ */
+function qminfo($str) {
+	do_action( 'qm/info',$str);
+}
+function pre($str){
+	echo '<pre>';
+	print_r($str);
+	echo '</pre>';
+}
+
+if ( ! function_exists( 'ixpc' ) ) {
+	/**
+	 *
+	 * @return object IXPC class object.
+	 * @since 1.0.0
+	 */
+	function ixpc(): object {
+
+		return IXPC\Main::instance();;
+	}
+}
+
+ixpc();
