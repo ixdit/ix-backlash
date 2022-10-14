@@ -2,26 +2,38 @@
   outline: none;
 }
 
-.ixbl-backlash {
-  .ixbl-backlash__wrapper {}
-  .ixbl-backlash__container {}
-  .ixbl-backlash__item {}
-  .ixbl-backlash__btn {
-    padding: 11px 35px;
-    background: #00C1FF;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-  }
-  .ixbl-backlash__btn-like span{
-    width: 25px;
-    //background: url('../../assets/images/btn-like.svg') no-repeat;
-    background: url('../images/logo1870х970.png') no-repeat;
-    background-size: contain;
-  }
-  .ixbl-backlash__btn-dislike span{
-    width: 24px;
-    //background: url('../images/btn-dislike.svg') no-repeat;
-    background-size: contain;
+.ixbl{
+  &-backlash{
+    &__wrapper {}
+    &__container {}
+    &__item {}
+
+    &__btn{
+      padding: 11px 35px;
+      background: #00C1FF;
+      border-radius: 8px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+
+      &-like{
+        span{
+          width: 25px;
+          background: url('../images/btn-like.svg') no-repeat;
+          background-size: contain;
+        }
+      }
+
+      &-dislike {
+        span{
+          width: 24px;
+          background: url('../images/btn-dislike.svg') no-repeat;
+          background-size: contain;
+        }
+      }
+
+
+    }
   }
 }
+
+
