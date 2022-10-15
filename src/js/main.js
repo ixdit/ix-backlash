@@ -1,4 +1,4 @@
-// import btn_dislike from 'images/btn-dislike.svg';
-import logo from './images/logo1870х970.png';
+import btnDislike from '../../src/images/btn-dislike.svg';
+import btnLike from '../../src/images/btn-like.svg';
 
 // jQuery(document).ready(function ($) {})

@@ -77,7 +77,7 @@ module.exports = {
 				test:      /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
 				include:   path.resolve( __dirname, 'src/images' ),
 				exclude: path.resolve( __dirname, 'src/icons' ),
-				type:      'assets/resource',
+				type:      'asset/resource',
 				generator: {
 					filename: "images/[name][ext]",
 				},
@@ -85,7 +85,7 @@ module.exports = {
 			{
 				test:      /\.(woff|woff2|eot|ttf|otf|svg)$/i,
 				include:   path.resolve( __dirname, 'src/fonts' ),
-				type:      'assets/resource',
+				type:      'asset/resource',
 				generator: {
 					filename: "fonts/[name][ext]",
 				},
