@@ -104,8 +104,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_images_btn_like_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../src/images/btn-like.svg */ "./src/images/btn-like.svg");
 
 
-
-// jQuery(document).ready(function ($) {})
+jQuery(function ($) {
+  $(document).on('click', '.ixbl-backlash__btn', function (e) {
+    e.preventDefault();
+    var data = {
+      post_id: $(this).attr('data-post_id'),
+      backlash: $(this).attr('data-action'),
+      action: 'ixbl_ajax_backlash',
+      nonce: ixbl_ajax_data.nonce
+    };
+    $.ajax({
+      url: ixbl_ajax_data.url,
+      data: data,
+      type: 'POST',
+      dataType: 'json',
+      beforeSend: function beforeSend(xhr, data) {
+        $(this).text('Send');
+      }
+    });
+  });
+});
 }();
 /******/ })()
 ;

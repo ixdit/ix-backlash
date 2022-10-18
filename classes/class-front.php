@@ -15,12 +15,14 @@ class Front {
 
 		ob_start();
 
+		global $post;
+
 		echo $content;
 
 		load_template(
 			ixbl()->templater->get_template( 'layout1.php' ),
 			true,
-			//$args
+			get_the_ID()
 		);
 
 		$newcontent = ob_get_clean();

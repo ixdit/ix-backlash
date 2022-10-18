@@ -32,11 +32,11 @@ class Enqueue {
 
 		wp_localize_script(
 			'ixbl-scripts',
-			'ajax_data',
+			'ixbl_ajax_data',
 			[
 				'root'    => esc_url_raw( rest_url() ),
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'nonce'   => wp_create_nonce( 'wp_rest' ),
+				'nonce'   => wp_create_nonce( '_ixbl_backlash_nonce' ),
 			],
 		);
 
