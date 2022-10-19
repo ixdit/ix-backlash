@@ -33,6 +33,43 @@ define( 'IXBL_PLUGIN_NAME', 'Ix Backlash' );
 
 require IXBL_PLUGIN_DIR . '/vendor/autoload.php';
 
+
+/**
+ * Создание таблиц
+ *
+ * @global $wpdb
+ */
+
+function ixbl_create_plugin_tables() {
+	global $wpdb;
+
+	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+
+	$table_name_posts_backlash = $wpdb->prefix . 'posts_backlash';
+	$table_name_user_backlash  = $wpdb->prefix . 'user_backlash';
+
+	$table_posts_backlash = "CREATE TABLE $table_name_posts_backlash (
+								 id int(11) NOT NULL AUTO_INCREMENT,
+								 post_id int NOT NULL,
+								 count_like int NOT NULL,
+								 count_dislike int NOT NULL,
+								 UNIQUE KEY id (id)
+								 );
+							";
+	$table_user_backlash = "CREATE TABLE $table_name_user_backlash (
+								 id int(11) NOT NULL AUTO_INCREMENT,
+								 user_id int NOT NULL,
+								 post_id int NOT NULL,
+								 backlash varchar(255) NOT NULL,
+								 UNIQUE KEY id (id)
+								 );
+							";
+	dbDelta($table_posts_backlash);
+	dbDelta($table_user_backlash);
+}
+
+register_activation_hook( __FILE__, 'ixbl_create_plugin_tables' );
+
 /**
  * Отладка
  */

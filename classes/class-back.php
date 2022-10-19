@@ -22,19 +22,27 @@ class Back {
 		if ( $post_id ) {
 
 			if ( $action === 'like' ) {
-				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_like', true);
-				$new_backlash_counter = $cur_backlash_counter + 1;
-				update_post_meta( $post_id, 'backlash_like', $new_backlash_counter );
-				$data = get_post_meta( $post_id, 'backlash_like', true);
+//				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_like', true);
+//				$new_backlash_counter = $cur_backlash_counter + 1;
+//				update_post_meta( $post_id, 'backlash_like', $new_backlash_counter );
+//				$data = get_post_meta( $post_id, 'backlash_like', true);
 			} elseif ( $action === 'dislike') {
-				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_dislike', true);
-				$new_backlash_counter = $cur_backlash_counter + 1;
-				update_post_meta( $post_id, 'backlash_dislike', $new_backlash_counter );
-				$data = get_post_meta( $post_id, 'backlash_dislike', true);
+//				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_dislike', true);
+//				$new_backlash_counter = $cur_backlash_counter + 1;
+//				update_post_meta( $post_id, 'backlash_dislike', $new_backlash_counter );
+//				$data = get_post_meta( $post_id, 'backlash_dislike', true);
 			}
 		}
 
 		wp_send_json( $data );
+
+	}
+
+	public function get_post_backlash_counter($post_id, $backlash_counter) {
+
+	}
+
+	public function add_post_backlash_counter($post_id, $backlash_counter) {
 
 	}
 
