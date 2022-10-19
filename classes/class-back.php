@@ -11,11 +11,9 @@ class Back {
 
 	}
 
-	public function ajax_scripts_callback() {
+	public function ajax_scripts_callback(): void {
 
-		if (!wp_verify_nonce($_POST['nonce'], '_ixbl_backlash_nonce')) {
-			wp_die('');
-		}
+		print_r($_POST);
 
 		$post_id = $_POST['post_id'];
 		$action = $_POST['backlash'];
@@ -24,15 +22,15 @@ class Back {
 		if ( $post_id ) {
 
 			if ( $action === 'like' ) {
-				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_like');
+				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_like', true);
 				$new_backlash_counter = $cur_backlash_counter + 1;
 				update_post_meta( $post_id, 'backlash_like', $new_backlash_counter );
-				$data = get_post_meta( $post_id, 'backlash_like');
+				$data = get_post_meta( $post_id, 'backlash_like', true);
 			} elseif ( $action === 'dislike') {
-				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_dislike');
+				$cur_backlash_counter = get_post_meta( $post_id, 'backlash_dislike', true);
 				$new_backlash_counter = $cur_backlash_counter + 1;
 				update_post_meta( $post_id, 'backlash_dislike', $new_backlash_counter );
-				$data = get_post_meta( $post_id, 'backlash_dislike');
+				$data = get_post_meta( $post_id, 'backlash_dislike', true);
 			}
 		}
 

@@ -14,8 +14,10 @@ jQuery(function ($) {
                 nonce: ixbl_ajax_data.nonce
             }
 
+            console.log(ixbl_ajax_data.ajaxurl);
+
             $.ajax({
-                url: ixbl_ajax_data.url,
+                url: ixbl_ajax_data.ajaxurl,
                 data: data,
                 type: 'POST',
                 dataType: 'json',
