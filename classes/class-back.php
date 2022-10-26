@@ -35,6 +35,8 @@ class Back {
 
 		}
 
+		setcookie( 'backlash_'.$post_id, $action, time() + (86400 * 7), '/', $_SERVER['HTTP_HOST'] );
+
 		wp_send_json( $data );
 
 	}
