@@ -100,3 +100,25 @@ if ( ! function_exists( 'ixbl' ) ) {
 }
 
 ixbl();
+
+//TODO: добавить админ часть плагина
+
+//add_action('admin_menu', 'add_plugin_page');
+//function add_plugin_page(){
+//	add_options_page( 'Настройки Backlash', 'Backlash', 'manage_options', 'backlash', 'backlash_options_page_output' );
+//}
+//function backlash_options_page_output(){
+//	?>
+<!--	<div class="wrap">-->
+<!--		<h2>--><?php //echo get_admin_page_title() ?><!--</h2>-->
+<!---->
+<!--		<form action="options.php" method="POST">-->
+<!--			--><?php
+//			settings_fields( 'option_group' );     // скрытые защитные поля
+//			do_settings_sections( 'backlash_page' ); // секции с настройками (опциями). У нас она всего одна 'section_id'
+//			submit_button();
+//			?>
+<!--		</form>-->
+<!--	</div>-->
+<!--	--><?php
+//}
