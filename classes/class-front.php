@@ -7,11 +7,13 @@ class Front {
 	public function init_hooks(): void {
 
 		add_filter( 'the_content', [ $this, 'add_backlash_before_content' ] );
-		add_filter( 'the_content', [ $this, 'add_backlash_after_content' ] );
+//		add_filter( 'the_content', [ $this, 'add_backlash_after_content' ] );
 
 	}
 
 	public function add_backlash_before_content( $content ): string {
+
+		if ( is_single()):
 
 		ob_start();
 
@@ -28,13 +30,23 @@ class Front {
 		$newcontent = ob_get_clean();
 
 		return $newcontent;
+
+		else:
+
+		return $content;
+
+		endif;
 	}
 
-	public function add_backlash_after_content( $content ): string {
-
-		$newcontent = 'test' . $content;
-
-		return $newcontent;
-	}
+	/**
+	 * вывод рекций перед контентом
+	 * TODO
+	 */
+//	public function add_backlash_after_content( $content ): string {
+//
+//		$newcontent = 'test' . $content;
+//
+//		return $newcontent;
+//	}
 
 }
