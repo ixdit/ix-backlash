@@ -13,7 +13,7 @@ class Back {
 
 	public function ajax_scripts_callback(): void {
 
-		print_r( $_POST );
+//		print_r( $_POST );
 
 		$post_id = $_POST['post_id'];
 		$action  = $_POST['backlash'];
@@ -26,18 +26,21 @@ class Back {
 			if ( empty( $existence_post_count['post_id'] ) ) {
 
 				$add_post_backlash_new_counter = $this->add_post_backlash_counter( $post_id, $action );
-
+				$data['add_new_post_backlash_counter'] = $add_post_backlash_new_counter;
 			} else {
 
 				$update_post_backlash_counter = $this->update_post_backlash_counter( $post_id, $action );
-
+				$data['update_post_backlash_counter'] = $update_post_backlash_counter;
 			}
 
 		}
 
-		setcookie( 'backlash_'.$post_id, $action, time() + (86400 * 7), '/', $_SERVER['HTTP_HOST'] );
+		if ( $add_post_backlash_new_counter || $update_post_backlash_counter ) {
+			setcookie( 'backlash_'.$post_id, $action, time() + (86400 * 7), '/', $_SERVER['HTTP_HOST'] );
+			wp_send_json_success();
+		}
 
-		wp_send_json( $data );
+		wp_die();
 
 	}
 

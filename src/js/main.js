@@ -14,7 +14,7 @@ jQuery(function ($) {
                 nonce: ixbl_ajax_data.nonce
             }
 
-            console.log(ixbl_ajax_data.ajaxurl);
+            // console.log(ixbl_ajax_data.ajaxurl);
 
             $.ajax({
                 url: ixbl_ajax_data.ajaxurl,
@@ -24,6 +24,11 @@ jQuery(function ($) {
                 beforeSend: function( xhr, data ) {
                     $(this).text( 'Send' );
                 },
+                success: function( data ) {
+                    if ( data.success === true ) {
+                         window.location.reload();
+                    }
+                }
             })
         })
 })

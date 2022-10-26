@@ -113,7 +113,9 @@ jQuery(function ($) {
       action: 'ixbl_ajax_backlash',
       nonce: ixbl_ajax_data.nonce
     };
-    console.log(ixbl_ajax_data.ajaxurl);
+
+    // console.log(ixbl_ajax_data.ajaxurl);
+
     $.ajax({
       url: ixbl_ajax_data.ajaxurl,
       data: data,
@@ -121,6 +123,11 @@ jQuery(function ($) {
       dataType: 'json',
       beforeSend: function beforeSend(xhr, data) {
         $(this).text('Send');
+      },
+      success: function success(data) {
+        if (data.success === true) {
+          window.location.reload();
+        }
       }
     });
   });
