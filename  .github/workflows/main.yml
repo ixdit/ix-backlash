@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Step one
-        run: echo "step one"
+      - run: echo "step one"
