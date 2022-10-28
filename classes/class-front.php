@@ -13,30 +13,29 @@ class Front {
 
 	public function add_backlash_before_content( $content ): string {
 
-		//TODO: убрать алтьернативное написание
-		if ( is_single()):
+		if ( is_single() ) {
+			ob_start();
 
-		ob_start();
+			global $post;
 
-		global $post;
+			echo $content;
 
-		echo $content;
+			load_template(
+				ixbl()->templater->get_template( 'layout1.php' ),
+				true,
+				get_the_ID()
+			);
 
-		load_template(
-			ixbl()->templater->get_template( 'layout1.php' ),
-			true,
-			get_the_ID()
-		);
+			$newcontent = ob_get_clean();
 
-		$newcontent = ob_get_clean();
+			return $newcontent;
 
-		return $newcontent;
+		} else {
 
-		else:
+			return $content;
 
-		return $content;
+		}
 
-		endif;
 	}
 
 	/**
