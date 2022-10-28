@@ -37,10 +37,10 @@ class Back {
 
 		if ( $add_post_backlash_new_counter || $update_post_backlash_counter ) {
 			setcookie( 'backlash_'.$post_id, $action, time() + (86400 * 7), '/', $_SERVER['HTTP_HOST'] );
-			wp_send_json_success();
+			wp_send_json_success($data);
+		} else {
+			wp_send_json_error();
 		}
-
-		wp_die();
 
 	}
 
@@ -104,3 +104,5 @@ class Back {
 	}
 
 }
+
+//TODO: вынести все действия с таблицами в отдельный класс

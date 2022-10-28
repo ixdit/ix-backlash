@@ -13,6 +13,7 @@ class Front {
 
 	public function add_backlash_before_content( $content ): string {
 
+		//TODO: убрать алтьернативное написание
 		if ( is_single()):
 
 		ob_start();
