@@ -1,0 +1,16 @@
+name: ix-backlash
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  single:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step one
+        uses: actions/checkout@v3
+        run: echo "step one"
