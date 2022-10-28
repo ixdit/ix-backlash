@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
-        uses: appleboy/telegram-action@master
-        with:
+      - uses: appleboy/telegram-action@master
+      - with:
           to: "511476692"
           token: "5163585819:AAHU1_JxgzOCbI4ox67tpsx_RauzAphgwXo"
           message: |
