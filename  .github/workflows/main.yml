@@ -1,4 +1,4 @@
-name: IXBL-test-action
+name: IXBL-mytest-action
 
 on:
   push:
