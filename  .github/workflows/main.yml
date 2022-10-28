@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Step two
       - uses: actions/checkout@v3
-        run: echo "Hello"
+      - run: echo "Hello"
