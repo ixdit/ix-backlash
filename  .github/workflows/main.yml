@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
-      - uses: appleboy/telegram-action@master
-      - with:
-          to: "511476692"
-          token: "5163585819:AAHU1_JxgzOCbI4ox67tpsx_RauzAphgwXo"
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ github.actor }} created commit:
             Commit message: ${{ github.event.commits[0].message }}
