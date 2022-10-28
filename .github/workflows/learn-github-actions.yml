@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step one
       - uses: actions/checkout@v3
+      - name: Step one
       - run: echo "step one"
