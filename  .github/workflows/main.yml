@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step two
       - uses: actions/checkout@v3
+      - name: Step two
       - run: echo "Hello"
