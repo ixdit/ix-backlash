@@ -12,5 +12,5 @@ jobs:
 
     steps:
       - name: Step one
-        uses: actions/checkout@v3
-        run: echo "step one"
+      - uses: actions/checkout@v3
+      - run: echo "step one"
