@@ -41,7 +41,7 @@ class Front {
 
 	/**
 	 * вывод рекций перед контентом
-	 * TODO
+	 * TODO: доделать
 	 */
 //	public function add_backlash_after_content( $content ): string {
 //
