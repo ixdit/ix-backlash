@@ -11,17 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
       - name: Step one
-      - run: echo "step one"
+        uses: actions/checkout@v3
+        run: echo "step one"
 
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
-      - uses: appleboy/telegram-action@master
-      - with:
+        uses: appleboy/telegram-action@master
+        with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
