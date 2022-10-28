@@ -12,5 +12,5 @@ jobs:
 
     steps:
       - name: Step two
-        uses: actions/checkout@v3
-        run: echo "step two"
+      - uses: actions/checkout@v3
+        run: echo "Hello ${{ github.event.inputs.name }}"
