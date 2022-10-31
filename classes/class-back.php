@@ -4,11 +4,17 @@ namespace IXBL;
 
 class Back {
 
+	private DBquery $db;
+
 	public function init_hooks(): void {
 
 		add_action( 'wp_ajax_nopriv_ixbl_ajax_backlash', [ $this, 'ajax_scripts_callback' ] );
 		add_action( 'wp_ajax_ixbl_ajax_backlash', [ $this, 'ajax_scripts_callback' ] );
 
+	}
+
+	public function __construct() {
+		$this->db = new DBquery();
 	}
 
 	public function ajax_scripts_callback(): void {
@@ -25,19 +31,19 @@ class Back {
 
 			if ( empty( $existence_post_count['post_id'] ) ) {
 
-				$add_post_backlash_new_counter = $this->add_post_backlash_counter( $post_id, $action );
+				$add_post_backlash_new_counter         = $this->add_post_backlash_counter( $post_id, $action );
 				$data['add_new_post_backlash_counter'] = $add_post_backlash_new_counter;
 			} else {
 
-				$update_post_backlash_counter = $this->update_post_backlash_counter( $post_id, $action );
+				$update_post_backlash_counter         = $this->update_post_backlash_counter( $post_id, $action );
 				$data['update_post_backlash_counter'] = $update_post_backlash_counter;
 			}
 
 		}
 
 		if ( $add_post_backlash_new_counter || $update_post_backlash_counter ) {
-			setcookie( 'backlash_'.$post_id, $action, time() + (86400 * 7), '/', $_SERVER['HTTP_HOST'] );
-			wp_send_json_success($data);
+			setcookie( 'backlash_' . $post_id, $action, time() + ( 86400 * 7 ), '/', $_SERVER['HTTP_HOST'] );
+			wp_send_json_success( $data );
 		} else {
 			wp_send_json_error();
 		}
@@ -46,10 +52,7 @@ class Back {
 
 	public function get_post_backlash_counter( $post_id, $backlash_counter = '' ) {
 
-		global $wpdb;
-
-		$result = $wpdb->get_row( $wpdb->prepare(
-			" SELECT * FROM {$wpdb->prefix}posts_backlash WHERE post_id = {$post_id}" ) );
+		$result = $this->db->get_row( $post_id );
 
 		return [
 			'post_id'       => $result->post_id,
@@ -102,6 +105,8 @@ class Back {
 		return $result;
 
 	}
+
+
 
 }
 
