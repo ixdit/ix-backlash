@@ -35,15 +35,6 @@ require IXBL_PLUGIN_DIR . '/vendor/autoload.php';
 
 
 /**
- * Создание таблиц
- *
- * @global $wpdb
- */
-
-
-register_activation_hook( __FILE__, array( \IXBL\Main, 'ixbl_create_plugin_tables'));
-
-/**
  * Отладка
  */
 //if ( ! function_exists( 'qminfo' ) ) {
