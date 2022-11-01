@@ -4,7 +4,6 @@ namespace IXBL;
 
 class Back {
 
-	private DBquery $db;
 
 	public function init_hooks(): void {
 
@@ -13,9 +12,6 @@ class Back {
 
 	}
 
-	public function __construct() {
-		$this->db = new DBquery();
-	}
 
 	public function ajax_scripts_callback(): void {
 
