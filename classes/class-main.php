@@ -11,7 +11,7 @@ class Main {
 	/**
 	 * @var \IXBL\DB
 	 */
-	protected DB $db;
+	public DB $db;
 
 
 	public static function instance(): Main {
@@ -40,7 +40,7 @@ class Main {
 
 		( new Enqueue() )->init_hooks();
 		( new Front() )->init_hooks();
-		( new Back() )->init_hooks();
+		( new Back( $this ) )->init_hooks();
 
 	}
 

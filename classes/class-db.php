@@ -15,4 +15,8 @@ class DB {
 		$this->table_user  = $wpdb->prefix . 'ixbl_user';
 	}
 
+	function get_row( $post_id) {
+
+	}
+
 }

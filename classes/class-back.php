@@ -4,6 +4,13 @@ namespace IXBL;
 
 class Back {
 
+	private $main;
+
+	public function __construct( $main ) {
+
+		$this->main = $main;
+
+	}
 
 	public function init_hooks(): void {
 
@@ -48,7 +55,8 @@ class Back {
 
 	public function get_post_backlash_counter( $post_id, $backlash_counter = '' ) {
 
-		$result = $this->db->get_row( $post_id );
+//		$result = (new Create_Table())->get_row( $post_id );
+		$result = $this->main->db->get_row( $post_id );
 
 		return [
 			'post_id'       => $result->post_id,
