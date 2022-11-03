@@ -13,34 +13,34 @@ class Front {
 
 	public function add_backlash_before_content( $content ): string {
 
-		if ( is_single() ) {
-			ob_start();
+		if ( is_single()):
 
-			global $post;
+		ob_start();
 
-			echo $content;
+		global $post;
 
-			load_template(
-				ixbl()->templater->get_template( 'layout1.php' ),
-				true,
-				get_the_ID()
-			);
+		echo $content;
 
-			$newcontent = ob_get_clean();
+		load_template(
+			ixbl()->templater->get_template( 'layout1.php' ),
+			true,
+			get_the_ID()
+		);
 
-			return $newcontent;
+		$newcontent = ob_get_clean();
 
-		} else {
+		return $newcontent;
 
-			return $content;
+		else:
 
-		}
+		return $content;
 
+		endif;
 	}
 
 	/**
 	 * вывод рекций перед контентом
-	 * TODO: доделать
+	 * TODO
 	 */
 //	public function add_backlash_after_content( $content ): string {
 //
